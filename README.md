@@ -3,18 +3,39 @@
 Landing page estática (HTML/CSS/JS, sem build) para divulgação da campanha de
 pós-graduação lato sensu do Centro Universitário de Viçosa.
 
+Há duas versões de layout, com o mesmo conteúdo e a mesma lógica de
+formulário/integrações — escolha uma para publicar (ou peça ajustes em
+qualquer uma antes de decidir):
+
+| Versão | Estilo | Caminho |
+|---|---|---|
+| **v1** | Institucional, azul-marinho + dourado, mais conservador | `index.html` |
+| **v2** | Dark theme, glassmorphism, bento grid, tipografia grande, mais arrojado/moderno | `v2/index.html` |
+
 ## Estrutura
 
 ```
-index.html      página única (hero, cursos, diferenciais, depoimentos, formulário, FAQ)
-css/style.css   estilos (paleta institucional placeholder: azul-marinho + dourado)
-js/script.js    catálogo de cursos, filtros, formulário de leads, UTM, FAQ
+index.html      v1 — página única (hero, cursos, diferenciais, depoimentos, formulário, FAQ)
+css/style.css   v1 — estilos (paleta institucional placeholder: azul-marinho + dourado)
+js/script.js    v1 — catálogo de cursos, filtros, formulário de leads, UTM, FAQ
+
+v2/index.html   v2 — mesma estrutura de conteúdo, layout mais sofisticado
+v2/css/style.css  v2 — dark theme, glassmorphism, bento grid, gradientes animados
+v2/js/script.js   v2 — mesma lógica da v1 + contador regressivo, tilt nos cards, scroll-reveal
 ```
 
 Para visualizar localmente: `python3 -m http.server 8000` na raiz do projeto e
-abrir `http://localhost:8000`.
+abrir `http://localhost:8000` (v1) ou `http://localhost:8000/v2/` (v2).
 
 ## O que precisa ser ajustado antes de publicar
+
+Os pontos abaixo valem para as duas versões (`js/script.js` e `v2/js/script.js`
+têm o mesmo catálogo e as mesmas constantes de integração).
+
+0. **Contador regressivo (só na v2)** (`v2/js/script.js`, constante `CAMPAIGN_DEADLINE`)
+   Está com uma data de exemplo (`2026-10-31`). Ajuste para a data real de
+   encerramento da condição de campanha — um prazo falso é prática enganosa
+   e não deve ser publicado.
 
 1. **Catálogo de cursos** (`js/script.js`, array `CURSOS`)
    Os cursos, durações, modalidades e `codRM` são **exemplos**. Substitua

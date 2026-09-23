@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Univiçosa Pós — Especialize-se</title>
+<meta name="description" content="Pós-graduação Univiçosa: especializações em Saúde, Exatas, Humanas e Gestão. Turmas híbridas, certificado MEC, condição especial de campanha.">
+
+<!-- Meta Pixel — trocar PIXEL_ID_AQUI pelo ID real da conta de Ads antes de publicar -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'PIXEL_ID_AQUI');
+fbq('track', 'PageView');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="spotlight" id="spotlight" aria-hidden="true"></div>
+<div class="noise" aria-hidden="true"></div>
+
+<!-- ===================== HEADER ===================== -->
+<header class="header" id="header">
+  <div class="wrap header__inner">
+    <a href="#topo" class="brand">
+      <span class="brand__mark">UV</span>
+      <span class="brand__text">Univiçosa<em>Pós</em></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#cursos"><span>01</span>Cursos</a>
+      <a href="#metodo"><span>02</span>Método</a>
+      <a href="#depoimentos"><span>03</span>Alunos</a>
+      <a href="#faq"><span>04</span>Dúvidas</a>
+    </nav>
+    <a href="#matricula" class="btn btn--pill">
+      <span>Garantir vaga</span>
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="topo">
+  <div class="hero__orb hero__orb--1"></div>
+  <div class="hero__orb hero__orb--2"></div>
+  <div class="hero__grid" aria-hidden="true"></div>
+
+  <div class="wrap hero__inner">
+    <p class="kicker">Edital de campanha 2026 · vagas limitadas por turma</p>
+    <h1 class="hero__title">
+      Sua <span class="grad">especialização</span><br>
+      começa com um <span class="outline">passo</span>.
+    </h1>
+    <p class="hero__lead">Mais de 15 pós-graduações em Saúde, Exatas, Humanas e Gestão — corpo docente qualificado, turmas híbridas e certificado reconhecido pelo MEC.</p>
+
+    <div class="hero__actions">
+      <a href="#matricula" class="btn btn--solid">Quero minha vaga →</a>
+      <a href="#cursos" class="btn btn--ghost">Ver cursos</a>
+    </div>
+
+    <div class="hero__countdown" id="countdown" aria-live="polite">
+      <span class="hero__countdown-label">Encerramento da condição de campanha</span>
+      <div class="hero__countdown-nums">
+        <div><strong id="cd-d">--</strong><small>dias</small></div>
+        <div><strong id="cd-h">--</strong><small>horas</small></div>
+        <div><strong id="cd-m">--</strong><small>min</small></div>
+        <div><strong id="cd-s">--</strong><small>seg</small></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track" id="marqueeTrack"></div>
+  </div>
+</section>
+
+<!-- ===================== STATS ===================== -->
+<section class="stats">
+  <div class="wrap stats__inner">
+    <div class="stat"><strong>15+</strong><span>especializações</span></div>
+    <div class="stat"><strong>18</strong><span>meses (média)</span></div>
+    <div class="stat"><strong>12x</strong><span>sem juros</span></div>
+    <div class="stat"><strong>MEC</strong><span>reconhecido</span></div>
+  </div>
+</section>
+
+<!-- ===================== CURSOS (bento) ===================== -->
+<section class="section" id="cursos">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="kicker">Catálogo</p>
+      <h2>Escolha por onde acelerar</h2>
+    </div>
+
+    <div class="filters" id="filters">
+      <button class="filter is-active" data-filter="todos">Todos</button>
+      <button class="filter" data-filter="saude">Saúde</button>
+      <button class="filter" data-filter="exatas">Exatas &amp; Tech</button>
+      <button class="filter" data-filter="humanas">Humanas &amp; Direito</button>
+      <button class="filter" data-filter="gestao">Gestão</button>
+    </div>
+
+    <div class="bento" id="bento"></div>
+  </div>
+</section>
+
+<!-- ===================== MÉTODO (zig-zag) ===================== -->
+<section class="section section--method" id="metodo">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="kicker">Método Univiçosa</p>
+      <h2>Feito para quem já trabalha</h2>
+    </div>
+
+    <div class="method">
+      <div class="method__row">
+        <span class="method__num">01</span>
+        <div>
+          <h3>Turmas híbridas</h3>
+          <p>Encontros presenciais quinzenais aos sábados + ambiente virtual disponível 24h.</p>
+        </div>
+      </div>
+      <div class="method__row">
+        <span class="method__num">02</span>
+        <div>
+          <h3>Docentes especialistas</h3>
+          <p>Mestres e doutores com atuação prática nas áreas que lecionam.</p>
+        </div>
+      </div>
+      <div class="method__row">
+        <span class="method__num">03</span>
+        <div>
+          <h3>TCC orientado</h3>
+          <p>Orientação individual e banca de defesa no próprio campus.</p>
+        </div>
+      </div>
+      <div class="method__row">
+        <span class="method__num">04</span>
+        <div>
+          <h3>Suporte via WhatsApp</h3>
+          <p>Da inscrição à colação de grau, com atendimento humano e ágil.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DEPOIMENTOS (carrossel) ===================== -->
+<section class="section" id="depoimentos">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="kicker">Prova social</p>
+      <h2>Quem já especializou com a gente</h2>
+    </div>
+  </div>
+  <div class="carousel" id="carousel">
+    <blockquote class="card-quote">
+      <p>"A flexibilidade de horários me permitiu concluir sem afastar do trabalho."</p>
+      <footer>Pós em Enfermagem</footer>
+    </blockquote>
+    <blockquote class="card-quote">
+      <p>"Professores muito qualificados, conteúdo direto ao ponto e aplicável na clínica."</p>
+      <footer>Pós em Odontologia</footer>
+    </blockquote>
+    <blockquote class="card-quote">
+      <p>"Suporte pelo WhatsApp facilitou muito — sempre fui bem atendido."</p>
+      <footer>MBA em Gestão</footer>
+    </blockquote>
+    <blockquote class="card-quote">
+      <p>"O TCC orientado me ajudou a aplicar o projeto direto no meu trabalho."</p>
+      <footer>Pós em Ciência de Dados</footer>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ===================== MATRÍCULA ===================== -->
+<section class="section section--form" id="matricula">
+  <div class="form-orb"></div>
+  <div class="wrap form__inner">
+    <div class="form__intro">
+      <p class="kicker kicker--light">Últimas vagas da turma</p>
+      <h2>Fale com um consultor e receba a condição de campanha</h2>
+      <p class="muted">Resposta em até 24h úteis, sem compromisso.</p>
+      <ul class="check-list">
+        <li>Simulação de parcelas na hora</li>
+        <li>Atendimento humano, sem robô</li>
+        <li>Sem taxa para simular</li>
+      </ul>
+    </div>
+
+    <form id="leadForm" class="glass-form" novalidate>
+      <div class="field">
+        <label for="nome">Nome completo *</label>
+        <input type="text" id="nome" name="nome" required autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="email">E-mail *</label>
+        <input type="email" id="email" name="email" required autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="whatsapp">WhatsApp *</label>
+        <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(31) 90000-0000" autocomplete="tel">
+      </div>
+      <div class="field">
+        <label for="curso">Curso de interesse *</label>
+        <select id="curso" name="curso" required>
+          <option value="" disabled selected>Selecione um curso</option>
+        </select>
+      </div>
+      <div class="field field--radio">
+        <span>Já é aluno ou egresso Univiçosa?</span>
+        <label><input type="radio" name="egresso" value="sim"> Sim</label>
+        <label><input type="radio" name="egresso" value="nao" checked> Não</label>
+      </div>
+
+      <input type="hidden" id="utm_source" name="utm_source">
+      <input type="hidden" id="utm_medium" name="utm_medium">
+      <input type="hidden" id="utm_campaign" name="utm_campaign">
+      <input type="hidden" id="utm_content" name="utm_content">
+
+      <label class="consent">
+        <input type="checkbox" id="lgpd" name="lgpd" required>
+        Autorizo o contato e o uso dos meus dados conforme a <a href="#">Política de Privacidade</a> (LGPD).
+      </label>
+
+      <button type="submit" class="btn btn--solid btn--block">Quero receber a proposta</button>
+      <p class="form__msg" id="formMsg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section" id="faq">
+  <div class="wrap wrap--narrow">
+    <div class="section__head">
+      <p class="kicker">Dúvidas frequentes</p>
+      <h2>Antes de decidir</h2>
+    </div>
+    <div class="accordion" id="accordion">
+      <div class="accordion__item">
+        <button class="accordion__trigger">Como funcionam as aulas?</button>
+        <div class="accordion__panel"><p>Turmas híbridas, com encontros presenciais quinzenais aos sábados e atividades no ambiente virtual de aprendizagem.</p></div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger">Qual a duração dos cursos?</button>
+        <div class="accordion__panel"><p>Entre 12 e 18 meses, incluindo a elaboração e defesa do TCC.</p></div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger">Egresso Univiçosa tem desconto?</button>
+        <div class="accordion__panel"><p>Sim, ex-alunos e parceiros têm condições especiais de desconto.</p></div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger">O certificado tem validade nacional?</button>
+        <div class="accordion__panel"><p>Sim, todos os cursos são reconhecidos pelo MEC.</p></div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger">Como faço a matrícula?</button>
+        <div class="accordion__panel"><p>Preencha o formulário desta página ou fale com um consultor pelo WhatsApp para receber o link de matrícula.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div>
+      <span class="brand__text">Univiçosa<em>Pós</em></span>
+      <p class="muted">Centro Universitário de Viçosa — MG</p>
+    </div>
+    <div class="muted">
+      <p>(31) 90000-0000 · WhatsApp</p>
+      <p>posgraduacao@univicosa.edu.br</p>
+    </div>
+    <div class="muted footer__legal">
+      <p>© <span id="year"></span> Univiçosa</p>
+      <p><a href="#">Privacidade</a> · <a href="#">Termos</a></p>
+    </div>
+  </div>
+</footer>
+
+<a class="whats-float" href="https://wa.me/5531900000000?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20a%20p%C3%B3s-gradua%C3%A7%C3%A3o%20da%20Univi%C3%A7osa" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39c1.45.79 3.08 1.21 4.75 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.02c-1.49 0-2.95-.4-4.23-1.16l-.3-.18-3.14.82.84-3.06-.2-.32a8.07 8.07 0 0 1-1.24-4.31c0-4.48 3.64-8.12 8.12-8.12 4.48 0 8.12 3.64 8.12 8.12s-3.64 8.21-8.17 8.21z"/></svg>
+</a>
+
+<script src="js/script.js"></script>
+</body>
+</html>
