@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aperfeiçoamento em Endodontia | Univiçosa Pós-Graduação</title>
+<meta name="description" content="Curso de Aperfeiçoamento em Endodontia da Univiçosa: prática clínica supervisionada em casos reais, microscopia operatória e instrumentação rotatória. Vagas limitadas.">
+
+<!-- ============================================================
+     META PIXEL (Facebook/Instagram Ads)
+     Substitua PIXEL_ID_AQUI pelo ID real da conta de anúncios
+     (gerenciada via NETA Ads) antes de publicar a campanha.
+     Recomenda-se criar uma conversão personalizada "Lead Endodontia"
+     para segmentar essa campanha das demais pós-graduações.
+     ============================================================ -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'PIXEL_ID_AQUI');
+fbq('track', 'PageView');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   Univiçosa Pós-Graduação — Aperfeiçoamento em Endodontia
+   Paleta placeholder (azul-marinho institucional + dourado).
+   Ajuste as variáveis abaixo para o manual de marca oficial.
+========================================================= */
+:root{
+  --navy-900:#0b1f3a;
+  --navy-800:#122a4d;
+  --navy-700:#1a3a66;
+  --navy-600:#234d85;
+  --gold-500:#e0a527;
+  --gold-600:#c68f1c;
+  --ink:#1c2430;
+  --muted:#5b6675;
+  --bg:#ffffff;
+  --bg-alt:#f4f6fa;
+  --border:#e3e8f0;
+  --success:#1f8a4c;
+  --danger:#c0392b;
+  --radius:14px;
+  --shadow:0 20px 40px -20px rgba(11,31,58,.25);
+  --max:1180px;
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:'Inter',system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.55;
+}
+h1,h2,h3,.logo__text{font-family:'Poppins',system-ui,sans-serif;}
+h1,h2,h3{line-height:1.2;margin:0 0 .5em;}
+p{margin:0 0 1em;color:var(--muted);}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;margin:0;padding:0;}
+img{max-width:100%;display:block;}
+
+.container{max-width:var(--max);margin:0 auto;padding:0 24px;}
+.container--narrow{max-width:760px;}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-weight:600;border-radius:999px;border:2px solid transparent;
+  padding:14px 28px;font-size:1rem;cursor:pointer;transition:.2s ease;
+  white-space:nowrap;
+}
+.btn--primary{background:var(--gold-500);color:var(--navy-900);}
+.btn--primary:hover{background:var(--gold-600);transform:translateY(-1px);}
+.btn--ghost{background:transparent;border-color:rgba(255,255,255,.5);color:#fff;}
+.btn--ghost:hover{background:rgba(255,255,255,.12);}
+.btn--sm{padding:10px 20px;font-size:.9rem;}
+.btn--lg{padding:16px 32px;font-size:1.05rem;}
+.btn--block{width:100%;}
+
+/* Header */
+.header{
+  position:sticky;top:0;z-index:50;background:rgba(11,31,58,.92);
+  backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08);
+}
+.header__inner{display:flex;align-items:center;gap:24px;height:76px;}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;margin-right:auto;}
+.logo__mark{
+  width:40px;height:40px;border-radius:10px;background:var(--gold-500);
+  color:var(--navy-900);display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:.95rem;
+}
+.logo__text{font-weight:500;font-size:1.05rem;color:#fff;}
+.logo__text strong{font-weight:700;color:var(--gold-500);}
+.logo__text--footer{color:var(--navy-900);}
+.nav{display:flex;gap:28px;}
+.nav a{color:#dbe4f3;font-weight:500;font-size:.95rem;}
+.nav a:hover{color:var(--gold-500);}
+.nav__toggle{
+  display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;
+}
+.nav__toggle span{width:24px;height:2px;background:#fff;border-radius:2px;}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;color:#fff;}
+.hero__bg{
+  position:absolute;inset:0;z-index:-1;
+  background:
+    radial-gradient(1100px 500px at 85% -10%, rgba(224,165,39,.25), transparent 60%),
+    linear-gradient(135deg,var(--navy-900),var(--navy-700));
+}
+.hero__inner{
+  display:grid;grid-template-columns:1.2fr .8fr;gap:48px;
+  padding:88px 24px 96px;align-items:center;
+}
+.badge{
+  display:inline-block;background:rgba(224,165,39,.15);color:var(--gold-500);
+  border:1px solid rgba(224,165,39,.4);padding:6px 14px;border-radius:999px;
+  font-size:.8rem;font-weight:600;letter-spacing:.02em;margin-bottom:18px;
+}
+.hero h1{font-size:clamp(2rem,4vw,2.8rem);font-weight:700;color:#fff;}
+.hero__lead{color:#c9d6ea;font-size:1.1rem;max-width:560px;}
+.hero__points{margin-bottom:28px;}
+.hero__points li{color:#dbe4f3;margin-bottom:8px;font-size:.98rem;}
+.hero__cta{display:flex;gap:14px;flex-wrap:wrap;}
+.hero__media{display:flex;flex-direction:column;gap:20px;}
+.hero__card{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);
+  border-radius:var(--radius);padding:22px 26px;backdrop-filter:blur(6px);
+}
+.hero__card--alt{margin-left:36px;}
+.hero__stat{display:block;font-size:2.2rem;font-weight:800;color:var(--gold-500);font-family:'Poppins',sans-serif;}
+
+/* Trust bar */
+.trust{background:var(--navy-800);}
+.trust__inner{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  padding:22px 24px;text-align:center;
+}
+.trust__inner div{display:flex;flex-direction:column;color:#dbe4f3;}
+.trust__inner strong{color:var(--gold-500);font-size:1.4rem;font-family:'Poppins',sans-serif;}
+.trust__inner span{font-size:.82rem;color:#aebbd2;}
+
+/* Section generic */
+.section{padding:88px 0;}
+.section--alt{background:var(--bg-alt);}
+.section__head{max-width:640px;margin:0 auto 44px;text-align:center;}
+.eyebrow{
+  display:inline-block;color:var(--gold-600);font-weight:700;font-size:.8rem;
+  letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;
+}
+.eyebrow--light{color:var(--gold-500);}
+.section__head h2{font-size:clamp(1.6rem,3vw,2.1rem);}
+
+/* Benefits */
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.benefit{
+  background:#fff;border-radius:var(--radius);padding:28px;text-align:left;
+  border:1px solid var(--border);
+}
+.benefit__icon{font-size:1.8rem;margin-bottom:12px;}
+.benefit h3{font-size:1.05rem;}
+.benefit p{font-size:.92rem;margin-bottom:0;}
+
+/* Testimonials */
+.testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.testimonial{
+  margin:0;background:var(--bg-alt);border-left:4px solid var(--gold-500);
+  padding:24px;border-radius:0 var(--radius) var(--radius) 0;
+}
+.testimonial p{color:var(--ink);font-style:italic;}
+.testimonial footer{font-size:.85rem;color:var(--muted);font-weight:600;}
+
+/* Form section */
+.section--form{background:linear-gradient(135deg,var(--navy-900),var(--navy-700));color:#fff;}
+.form__inner{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start;}
+.form__intro h2{color:#fff;font-size:clamp(1.5rem,3vw,2rem);}
+.form__intro p{color:#c9d6ea;}
+.form__list li{color:#dbe4f3;margin-bottom:8px;padding-left:22px;position:relative;font-size:.95rem;}
+.form__list li::before{content:"✓";position:absolute;left:0;color:var(--gold-500);font-weight:700;}
+
+.lead-form{
+  background:#fff;border-radius:var(--radius);padding:32px;color:var(--ink);
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;box-shadow:var(--shadow);
+}
+.field{display:flex;flex-direction:column;gap:6px;}
+.field label{font-size:.85rem;font-weight:600;color:var(--navy-800);}
+.field input,.field select{
+  border:1.5px solid var(--border);border-radius:8px;padding:11px 12px;
+  font-size:.95rem;font-family:inherit;background:#fff;color:var(--ink);
+}
+.field input:focus,.field select:focus{outline:none;border-color:var(--navy-600);}
+.field--radio{grid-column:1/-1;flex-direction:row;align-items:center;gap:18px;font-size:.9rem;color:var(--muted);}
+.field--radio label{display:flex;align-items:center;gap:6px;font-weight:500;color:var(--ink);}
+.consent{grid-column:1/-1;font-size:.82rem;color:var(--muted);display:flex;gap:8px;align-items:flex-start;}
+.consent a{color:var(--navy-700);text-decoration:underline;}
+.lead-form button{grid-column:1/-1;}
+.form__msg{grid-column:1/-1;margin:0;font-size:.9rem;min-height:1.2em;}
+.form__msg.is-success{color:var(--success);}
+.form__msg.is-error{color:var(--danger);}
+.field.is-invalid input,.field.is-invalid select{border-color:var(--danger);}
+
+/* FAQ */
+.accordion__item{border-bottom:1px solid var(--border);}
+.accordion__trigger{
+  width:100%;text-align:left;background:none;border:none;padding:18px 4px;
+  font-size:1rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;
+  color:var(--ink);font-family:inherit;
+}
+.accordion__trigger::after{content:"+";font-size:1.3rem;color:var(--navy-700);}
+.accordion__item.is-open .accordion__trigger::after{content:"–";}
+.accordion__panel{max-height:0;overflow:hidden;transition:max-height .25s ease;}
+.accordion__panel p{padding:0 4px 18px;font-size:.94rem;}
+.accordion__item.is-open .accordion__panel{max-height:220px;}
+
+/* CTA final */
+.cta-final{background:var(--gold-500);}
+.cta-final__inner{padding:56px 24px;text-align:center;}
+.cta-final h2{color:var(--navy-900);font-size:clamp(1.4rem,3vw,2rem);}
+.cta-final p{color:var(--navy-800);}
+.cta-final .btn--primary{background:var(--navy-900);color:#fff;}
+.cta-final .btn--primary:hover{background:var(--navy-800);}
+
+/* Footer */
+.footer{background:var(--bg-alt);padding:48px 0 28px;}
+.footer__inner{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:24px;font-size:.9rem;}
+.footer p{margin-bottom:6px;}
+.footer__legal{text-align:right;color:var(--muted);}
+.footer__legal a{text-decoration:underline;}
+
+/* WhatsApp floating button */
+.whats-float{
+  position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;
+  background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 24px -6px rgba(0,0,0,.35);z-index:60;transition:.2s;
+}
+.whats-float:hover{transform:scale(1.06);}
+
+/* Modules (grade curricular) */
+.modules{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.module{
+  display:flex;gap:16px;align-items:flex-start;background:#fff;
+  border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;
+}
+.module__num{
+  flex:none;width:36px;height:36px;border-radius:10px;background:var(--navy-800);
+  color:var(--gold-500);display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-family:'Poppins',sans-serif;font-size:.95rem;
+}
+.module h3{font-size:1rem;margin-bottom:4px;}
+.module p{font-size:.88rem;margin-bottom:0;}
+
+/* Corpo docente */
+.teachers{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.teacher{text-align:center;}
+.teacher__avatar{
+  width:88px;height:88px;border-radius:50%;margin:0 auto 14px;
+  background:linear-gradient(135deg,var(--navy-700),var(--navy-900));
+  display:flex;align-items:center;justify-content:center;color:var(--gold-500);
+  font-weight:800;font-size:1.4rem;font-family:'Poppins',sans-serif;
+}
+.teacher h3{font-size:1rem;margin-bottom:2px;}
+.teacher span{display:block;font-size:.85rem;color:var(--muted);}
+
+/* Investimento (pricing boxes) */
+.pricing{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;align-items:stretch;}
+.pricing-box{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius);
+  padding:32px;box-shadow:var(--shadow);position:relative;
+}
+.pricing-box--highlight{border-color:var(--gold-500);}
+.pricing-box__tag{
+  position:absolute;top:-14px;left:24px;background:var(--gold-500);color:var(--navy-900);
+  font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:999px;
+}
+.pricing-box h3{font-size:1.1rem;}
+.pricing-box__price{font-family:'Poppins',sans-serif;font-weight:800;font-size:2.2rem;color:var(--navy-800);margin-bottom:4px;}
+.pricing-box__price span{font-size:.95rem;font-weight:600;color:var(--muted);}
+.pricing-box ul{margin:18px 0 24px;}
+.pricing-box li{font-size:.9rem;color:var(--muted);padding-left:22px;position:relative;margin-bottom:8px;}
+.pricing-box li::before{content:"✓";position:absolute;left:0;color:var(--success);font-weight:700;}
+
+/* Responsive */
+@media (max-width:980px){
+  .hero__inner{grid-template-columns:1fr;padding-top:56px;}
+  .hero__media{flex-direction:row;}
+  .hero__card--alt{margin-left:0;}
+  .benefits{grid-template-columns:repeat(2,1fr);}
+  .testimonials{grid-template-columns:1fr;}
+  .form__inner{grid-template-columns:1fr;}
+  .lead-form{grid-template-columns:1fr;}
+  .footer__inner{grid-template-columns:1fr;text-align:left;}
+  .footer__legal{text-align:left;}
+  .modules{grid-template-columns:1fr;}
+  .teachers{grid-template-columns:1fr;}
+}
+@media (max-width:640px){
+  .nav{
+    position:absolute;top:76px;left:0;right:0;background:var(--navy-900);
+    flex-direction:column;padding:16px 24px;display:none;gap:16px;
+  }
+  .nav.is-open{display:flex;}
+  .nav__toggle{display:flex;}
+  .header__inner .btn--sm{display:none;}
+  .trust__inner{grid-template-columns:repeat(2,1fr);}
+  .benefits{grid-template-columns:1fr;}
+  .pricing{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#topo" class="logo">
+      <span class="logo__mark">UV</span>
+      <span class="logo__text">Univiçosa <strong>Pós-Graduação</strong></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#sobre">O curso</a>
+      <a href="#grade">Grade curricular</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#investimento">Investimento</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+    <a href="#inscricao" class="btn btn--primary btn--sm">Quero me inscrever</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="topo">
+  <div class="hero__bg"></div>
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <span class="badge">Inscrições abertas — vagas limitadas</span>
+      <h1>Curso de Aperfeiçoamento em Endodontia</h1>
+      <p class="hero__lead">Domine o diagnóstico, a instrumentação rotatória e a obturação dos canais radiculares com prática clínica supervisionada em pacientes reais, na clínica-escola de Odontologia da Univiçosa.</p>
+      <ul class="hero__points">
+        <li>✔ Prática clínica supervisionada em casos reais</li>
+        <li>✔ Microscopia operatória e instrumentação rotatória/reciprocante</li>
+        <li>✔ Corpo docente especialista em Endodontia</li>
+      </ul>
+      <div class="hero__cta">
+        <a href="#inscricao" class="btn btn--primary btn--lg" id="ctaHero">Garantir minha vaga</a>
+        <a href="https://wa.me/5531900000000?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20curso%20de%20Aperfei%C3%A7oamento%20em%20Endodontia%20da%20Univi%C3%A7osa" target="_blank" rel="noopener" class="btn btn--ghost btn--lg" id="ctaWhats">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39c1.45.79 3.08 1.21 4.75 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.02c-1.49 0-2.95-.4-4.23-1.16l-.3-.18-3.14.82.84-3.06-.2-.32a8.07 8.07 0 0 1-1.24-4.31c0-4.48 3.64-8.12 8.12-8.12 4.48 0 8.12 3.64 8.12 8.12s-3.64 8.21-8.17 8.21z"/></svg>
+          Falar no WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="hero__media" aria-hidden="true">
+      <div class="hero__card">
+        <span class="hero__stat">420h</span>
+        <span>carga horária total</span>
+      </div>
+      <div class="hero__card hero__card--alt">
+        <span class="hero__stat">12</span>
+        <span>meses de duração</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRUST BAR ===================== -->
+<section class="trust">
+  <div class="container trust__inner">
+    <div><strong>Híbrido</strong><span>teoria online + prática presencial</span></div>
+    <div><strong>12x</strong><span>sem juros no cartão</span></div>
+    <div><strong>Clínica-escola</strong><span>atendimento a pacientes reais</span></div>
+    <div><strong>MEC</strong><span>curso reconhecido</span></div>
+  </div>
+</section>
+
+<!-- ===================== SOBRE O CURSO ===================== -->
+<section class="section" id="sobre">
+  <div class="container container--narrow">
+    <div class="section__head">
+      <span class="eyebrow">Sobre o curso</span>
+      <h2>Aprofunde sua atuação clínica em Endodontia</h2>
+      <p>Voltado a cirurgiões-dentistas que querem ganhar segurança e precisão no tratamento endodôntico, unindo fundamentação teórica atualizada e prática clínica intensiva, do diagnóstico ao retratamento de casos complexos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GRADE CURRICULAR ===================== -->
+<section class="section section--alt" id="grade">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow">Grade curricular</span>
+      <h2>Módulos do curso</h2>
+      <p>Conteúdo organizado da teoria à prática clínica supervisionada.</p>
+    </div>
+    <div class="modules">
+      <div class="module">
+        <span class="module__num">01</span>
+        <div><h3>Diagnóstico e Plano de Tratamento Endodôntico</h3><p>Exame clínico, testes de sensibilidade e interpretação radiográfica/tomográfica.</p></div>
+      </div>
+      <div class="module">
+        <span class="module__num">02</span>
+        <div><h3>Anatomia do Sistema de Canais Radiculares</h3><p>Variações anatômicas e sua relação com o sucesso do tratamento.</p></div>
+      </div>
+      <div class="module">
+        <span class="module__num">03</span>
+        <div><h3>Biomecânica e Instrumentação</h3><p>Técnicas manuais, rotatórias e reciprocantes em sistemas atuais de NiTi.</p></div>
+      </div>
+      <div class="module">
+        <span class="module__num">04</span>
+        <div><h3>Obturação dos Canais Radiculares</h3><p>Técnicas de condensação e cimentos obturadores biocerâmicos.</p></div>
+      </div>
+      <div class="module">
+        <span class="module__num">05</span>
+        <div><h3>Retratamento Endodôntico</h3><p>Remoção de material obturador, núcleos e instrumentos fraturados.</p></div>
+      </div>
+      <div class="module">
+        <span class="module__num">06</span>
+        <div><h3>Urgências e Traumatismos Dentoalveolares</h3><p>Condutas clínicas em pulpite, abscesso e trauma dental.</p></div>
+      </div>
+      <div class="module">
+        <span class="module__num">07</span>
+        <div><h3>Cirurgia Paraendodôntica</h3><p>Indicações e técnica de apicetomia em insucessos do tratamento convencional.</p></div>
+      </div>
+      <div class="module">
+        <span class="module__num">08</span>
+        <div><h3>Microscopia Operatória Aplicada</h3><p>Uso do microscópio clínico para aumento de precisão e previsibilidade.</p></div>
+      </div>
+      <div class="module">
+        <span class="module__num">09</span>
+        <div><h3>Clínica Supervisionada</h3><p>Atendimento de pacientes reais na clínica-escola, sob supervisão docente.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DIFERENCIAIS ===================== -->
+<section class="section" id="diferenciais">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow">Por que Univiçosa</span>
+      <h2>Estrutura pensada para a prática clínica</h2>
+    </div>
+    <div class="benefits">
+      <div class="benefit">
+        <div class="benefit__icon">🦷</div>
+        <h3>Clínica-escola de Odontologia</h3>
+        <p>Atendimento supervisionado a pacientes reais, com fluxo de casos para prática endodôntica.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit__icon">🔬</div>
+        <h3>Microscópio operatório</h3>
+        <p>Equipamento disponível para as aulas práticas de microscopia aplicada à Endodontia.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit__icon">⚙️</div>
+        <h3>Instrumentação rotatória</h3>
+        <p>Motores endodônticos e localizador apical eletrônico para treino em sistemas atuais.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit__icon">🎓</div>
+        <h3>Corpo docente especialista</h3>
+        <p>Professores com atuação clínica ativa em Endodontia, mestres e doutores na área.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit__icon">🕒</div>
+        <h3>Flexibilidade de horário</h3>
+        <p>Teoria em modelo híbrido, com módulos práticos concentrados aos sábados no campus.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit__icon">📄</div>
+        <h3>Certificado reconhecido</h3>
+        <p>Certificado de curso de aperfeiçoamento com validade nacional.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CORPO DOCENTE ===================== -->
+<section class="section section--alt" id="docentes">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow">Corpo docente</span>
+      <h2>Quem vai te acompanhar nesta jornada</h2>
+      <p>Professores com atuação clínica ativa em Endodontia.</p>
+    </div>
+    <!-- Substituir pelos nomes, titulação e foto reais dos docentes confirmados antes de publicar -->
+    <div class="teachers">
+      <div class="teacher">
+        <div class="teacher__avatar">DR</div>
+        <h3>Coordenação do curso</h3>
+        <span>Doutor(a) em Endodontia</span>
+      </div>
+      <div class="teacher">
+        <div class="teacher__avatar">MS</div>
+        <h3>Corpo docente</h3>
+        <span>Mestres e especialistas em Endodontia</span>
+      </div>
+      <div class="teacher">
+        <div class="teacher__avatar">CL</div>
+        <h3>Supervisão clínica</h3>
+        <span>Cirurgiões-dentistas com atuação prática</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DEPOIMENTOS ===================== -->
+<section class="section" id="depoimentos">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow">Depoimentos</span>
+      <h2>Quem já passou pela pós de Odontologia da Univiçosa</h2>
+    </div>
+    <div class="testimonials">
+      <blockquote class="testimonial">
+        <p>"Ganhei muito mais segurança para tratar casos complexos depois do curso. A prática com pacientes reais fez toda a diferença."</p>
+        <footer>— Aluno, curso de Endodontia</footer>
+      </blockquote>
+      <blockquote class="testimonial">
+        <p>"Professores muito qualificados e conteúdo direto ao ponto, aplicável no dia a dia da clínica."</p>
+        <footer>— Aluno, Pós em Odontologia</footer>
+      </blockquote>
+      <blockquote class="testimonial">
+        <p>"O acesso ao microscópio operatório nas aulas práticas foi um diferencial que não encontrei em outros cursos."</p>
+        <footer>— Aluna, curso de Endodontia</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INVESTIMENTO ===================== -->
+<section class="section section--alt" id="investimento">
+  <div class="container container--narrow">
+    <div class="section__head">
+      <span class="eyebrow">Investimento</span>
+      <h2>Condições especiais para esta turma</h2>
+    </div>
+    <div class="pricing">
+      <div class="pricing-box">
+        <h3>Matrícula avulsa</h3>
+        <p class="pricing-box__price">R$ XXX<span>/mês</span></p>
+        <ul>
+          <li>420h de carga horária</li>
+          <li>Material didático incluso</li>
+          <li>Certificado reconhecido</li>
+        </ul>
+        <a href="#inscricao" class="btn btn--primary btn--block">Quero essa condição</a>
+      </div>
+      <div class="pricing-box pricing-box--highlight">
+        <span class="pricing-box__tag">Egressos Univiçosa</span>
+        <h3>Desconto egresso/parceiro</h3>
+        <p class="pricing-box__price">R$ XXX<span>/mês</span></p>
+        <ul>
+          <li>Tudo do plano avulso</li>
+          <li>Desconto para ex-alunos e parceiros</li>
+          <li>Prioridade na fila da clínica-escola</li>
+        </ul>
+        <a href="#inscricao" class="btn btn--primary btn--block">Quero essa condição</a>
+      </div>
+    </div>
+    <!-- Valores placeholder: substituir pelos valores confirmados na tabela de preços do módulo Educacional (TOTVS RM) antes de publicar -->
+  </div>
+</section>
+
+<!-- ===================== FORMULÁRIO / INSCRIÇÃO ===================== -->
+<section class="section section--form" id="inscricao">
+  <div class="container form__inner">
+    <div class="form__intro">
+      <span class="eyebrow eyebrow--light">Últimas vagas da turma</span>
+      <h2>Preencha e receba a condição especial da campanha</h2>
+      <p>Um consultor educacional entra em contato em até 24h úteis pelo WhatsApp ou e-mail.</p>
+      <ul class="form__list">
+        <li>Sem compromisso</li>
+        <li>Simulação de parcelas na hora</li>
+        <li>Atendimento humanizado</li>
+      </ul>
+    </div>
+
+    <form id="leadForm" class="lead-form" novalidate>
+      <div class="field">
+        <label for="nome">Nome completo *</label>
+        <input type="text" id="nome" name="nome" required autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="email">E-mail *</label>
+        <input type="email" id="email" name="email" required autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="whatsapp">WhatsApp *</label>
+        <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(31) 90000-0000" autocomplete="tel">
+      </div>
+      <div class="field">
+        <label for="cro">CRO (opcional)</label>
+        <input type="text" id="cro" name="cro" placeholder="Nº do CRO / UF">
+      </div>
+      <input type="hidden" id="curso" name="curso" value="Aperfeiçoamento em Endodontia">
+      <div class="field field--radio">
+        <span>Você já é aluno ou egresso Univiçosa?</span>
+        <label><input type="radio" name="egresso" value="sim"> Sim</label>
+        <label><input type="radio" name="egresso" value="nao" checked> Não</label>
+      </div>
+
+      <!-- Campos ocultos: rastreamento de campanha (UTM) para atribuição em Ads -->
+      <input type="hidden" id="utm_source" name="utm_source">
+      <input type="hidden" id="utm_medium" name="utm_medium">
+      <input type="hidden" id="utm_campaign" name="utm_campaign">
+      <input type="hidden" id="utm_content" name="utm_content">
+
+      <label class="consent">
+        <input type="checkbox" id="lgpd" name="lgpd" required>
+        Autorizo o contato e o uso dos meus dados conforme a
+        <a href="#" id="lgpdLink">Política de Privacidade</a> (LGPD).
+      </label>
+
+      <button type="submit" class="btn btn--primary btn--lg btn--block">Quero receber a proposta</button>
+      <p class="form__msg" id="formMsg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section" id="faq">
+  <div class="container container--narrow">
+    <div class="section__head">
+      <span class="eyebrow">Perguntas frequentes</span>
+      <h2>Ainda com dúvidas?</h2>
+    </div>
+    <div class="accordion" id="accordion">
+      <div class="accordion__item">
+        <button class="accordion__trigger">Preciso já atuar em Endodontia para fazer o curso?</button>
+        <div class="accordion__panel"><p>Não. O curso é indicado tanto para quem já atua na área quanto para clínicos gerais que querem se aperfeiçoar em Endodontia.</p></div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger">Como funciona a prática clínica?</button>
+        <div class="accordion__panel"><p>Os módulos práticos acontecem na clínica-escola de Odontologia da Univiçosa, com atendimento supervisionado a pacientes reais encaminhados pela instituição.</p></div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger">Qual a duração e carga horária?</button>
+        <div class="accordion__panel"><p>O curso tem carga horária total de 420 horas, com duração média de 12 meses entre módulos teóricos e práticos.</p></div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger">Tenho desconto sendo egresso Univiçosa?</button>
+        <div class="accordion__panel"><p>Sim. Ex-alunos e colaboradores de instituições parceiras têm condições especiais de desconto na mensalidade.</p></div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger">Como faço a matrícula?</button>
+        <div class="accordion__panel"><p>Preencha o formulário desta página ou fale diretamente com um consultor pelo WhatsApp para receber o link de matrícula.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA FINAL ===================== -->
+<section class="cta-final">
+  <div class="container cta-final__inner">
+    <h2>As vagas desta turma são limitadas</h2>
+    <p>Garanta sua vaga no curso de Aperfeiçoamento em Endodontia com condição especial de campanha.</p>
+    <a href="#inscricao" class="btn btn--primary btn--lg">Quero me inscrever agora</a>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div>
+      <span class="logo__text logo__text--footer">Univiçosa <strong>Pós-Graduação</strong></span>
+      <p>Centro Universitário de Viçosa — MG</p>
+    </div>
+    <div class="footer__contact">
+      <p>📱 (31) 90000-0000 (WhatsApp)</p>
+      <p>✉️ posgraduacao@univicosa.edu.br</p>
+      <p>📍 Viçosa, Minas Gerais</p>
+    </div>
+    <div class="footer__legal">
+      <p>© <span id="year"></span> Univiçosa. Todos os direitos reservados.</p>
+      <p><a href="#">Política de Privacidade</a> · <a href="#">Termos de Uso</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Botão flutuante WhatsApp -->
+<a class="whats-float" href="https://wa.me/5531900000000?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20curso%20de%20Aperfei%C3%A7oamento%20em%20Endodontia%20da%20Univi%C3%A7osa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39c1.45.79 3.08 1.21 4.75 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.02c-1.49 0-2.95-.4-4.23-1.16l-.3-.18-3.14.82.84-3.06-.2-.32a8.07 8.07 0 0 1-1.24-4.31c0-4.48 3.64-8.12 8.12-8.12 4.48 0 8.12 3.64 8.12 8.12s-3.64 8.21-8.17 8.21z"/></svg>
+</a>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* =========================================================
+   1) MENU MOBILE
+========================================================= */
+const navToggle = document.getElementById('navToggle');
+const nav = document.getElementById('nav');
+navToggle.addEventListener('click', () => nav.classList.toggle('is-open'));
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('is-open')));
+
+/* =========================================================
+   2) FAQ (accordion)
+========================================================= */
+document.getElementById('accordion').addEventListener('click', (e) => {
+  const trigger = e.target.closest('.accordion__trigger');
+  if (!trigger) return;
+  const item = trigger.closest('.accordion__item');
+  const wasOpen = item.classList.contains('is-open');
+  document.querySelectorAll('.accordion__item').forEach(i => i.classList.remove('is-open'));
+  if (!wasOpen) item.classList.add('is-open');
+});
+
+/* =========================================================
+   3) UTM tracking (atribuição de campanha)
+========================================================= */
+const params = new URLSearchParams(window.location.search);
+['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(key => {
+  const el = document.getElementById(key);
+  if (el) el.value = params.get(key) || '';
+});
+
+/* =========================================================
+   4) Máscara simples de WhatsApp
+========================================================= */
+const whatsInput = document.getElementById('whatsapp');
+whatsInput.addEventListener('input', () => {
+  let v = whatsInput.value.replace(/\D/g, '').slice(0, 11);
+  if (v.length > 6) v = v.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+  else if (v.length > 2) v = v.replace(/(\d{2})(\d{0,5})/, '($1) $2');
+  whatsInput.value = v.trim();
+});
+
+/* =========================================================
+   5) Envio do formulário de captação de leads
+   -------------------------------------------------------
+   INTEGRAÇÃO PENDENTE (ajustar antes de publicar a campanha):
+   - Rubeus (CRM): substituir RUBEUS_WEBHOOK_URL pela URL do
+     webhook/API de captação de leads do Rubeus.
+   - Worknow: se o disparo de WhatsApp automático ficar a
+     cargo da plataforma, envie o lead também para o endpoint
+     do Worknow (ou deixe o Rubeus orquestrar via integração
+     nativa, se já configurada).
+   - TOTVS RM: a pré-matrícula na turma de Endodontia (módulo
+     Educacional) segue sendo feita manualmente pela secretaria
+     a partir do lead qualificado no Rubeus, a menos que exista
+     rotina de importação automática.
+   Enquanto a integração não está configurada, o formulário
+   guarda o lead no navegador (localStorage) e abre o
+   WhatsApp com os dados preenchidos, para não perder contato.
+========================================================= */
+const RUBEUS_WEBHOOK_URL = ''; // TODO: preencher com a URL real do Rubeus
+
+const form = document.getElementById('leadForm');
+const formMsg = document.getElementById('formMsg');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  formMsg.textContent = '';
+  formMsg.className = 'form__msg';
+
+  const data = Object.fromEntries(new FormData(form).entries());
+
+  let valid = true;
+  ['nome', 'email', 'whatsapp', 'lgpd'].forEach(name => {
+    const field = form.querySelector(`[name="${name}"]`)?.closest('.field') || form.querySelector(`[name="${name}"]`)?.closest('.consent');
+    const filled = name === 'lgpd' ? form.lgpd.checked : !!data[name];
+    if (field) field.classList.toggle('is-invalid', !filled);
+    if (!filled) valid = false;
+  });
+
+  if (!valid) {
+    formMsg.textContent = 'Preencha todos os campos obrigatórios antes de enviar.';
+    formMsg.classList.add('is-error');
+    return;
+  }
+
+  const submitBtn = form.querySelector('button[type="submit"]');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Enviando...';
+
+  try {
+    if (RUBEUS_WEBHOOK_URL) {
+      await fetch(RUBEUS_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...data, origem: 'landing-endodontia', criado_em: new Date().toISOString() }),
+      });
+    } else {
+      const leads = JSON.parse(localStorage.getItem('leads_endodontia') || '[]');
+      leads.push({ ...data, criado_em: new Date().toISOString() });
+      localStorage.setItem('leads_endodontia', JSON.stringify(leads));
+    }
+
+    // Disparo do evento de conversão para o Pixel (Meta Ads)
+    if (typeof fbq === 'function') {
+      fbq('track', 'Lead', { content_name: data.curso });
+    }
+
+    formMsg.textContent = 'Recebemos seus dados! Em instantes você será direcionado ao WhatsApp da nossa equipe.';
+    formMsg.classList.add('is-success');
+    form.reset();
+    document.getElementById('curso').value = 'Aperfeiçoamento em Endodontia';
+
+    const msg = encodeURIComponent(
+      `Olá, meu nome é ${data.nome}. Tenho interesse no curso de "${data.curso}" e gostaria de receber mais informações.`
+    );
+    setTimeout(() => window.open(`https://wa.me/5531900000000?text=${msg}`, '_blank'), 1200);
+  } catch (err) {
+    formMsg.textContent = 'Não foi possível enviar agora. Tente novamente ou fale direto pelo WhatsApp.';
+    formMsg.classList.add('is-error');
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Quero receber a proposta';
+  }
+});
+</script>
+</body>
+</html>
