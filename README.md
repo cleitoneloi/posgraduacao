@@ -72,6 +72,39 @@ têm o mesmo catálogo e as mesmas constantes de integração).
    âncoras (`#`). Aponte para as páginas reais antes de publicar, já que
    o formulário coleta dados pessoais (nome, e-mail, WhatsApp).
 
+## Deploy no Apache (segurança)
+
+O repositório já inclui:
+
+- **`.htaccess`** (raiz) — força HTTPS, aplica headers de segurança (HSTS,
+  X-Frame-Options, X-Content-Type-Options, Referrer-Policy, CSP), desativa
+  listagem de diretórios e bloqueia `.git`/arquivos sensíveis. Funciona em
+  hospedagens compartilhadas (precisa de `AllowOverride All` ou pelo menos
+  `AllowOverride FileInfo Options`).
+- **`deploy/apache-vhost.conf.example`** — mesmo hardening, mas como
+  `VirtualHost` (recomendado se você tem acesso root ao Apache): evita o
+  overhead de reler `.htaccess` a cada request e permite `AllowOverride None`.
+
+Passo a passo (Debian/Ubuntu, acesso root):
+
+```bash
+sudo a2enmod ssl rewrite headers deflate
+sudo cp deploy/apache-vhost.conf.example /etc/apache2/sites-available/pos-graduacao.conf
+# edite ServerName e DocumentRoot no arquivo copiado
+sudo a2ensite pos-graduacao
+sudo apachectl configtest
+sudo certbot --apache -d pos.univicosa.edu.br   # emite o certificado TLS
+sudo systemctl reload apache2
+```
+
+Se usar o `.htaccess` em vez do vhost (hospedagem compartilhada) e a página
+der erro 500 ao subir, normalmente é `AllowOverride` insuficiente — peça ao
+provedor para liberar `AllowOverride FileInfo Options Indexes` na pasta, ou
+peça para aplicarem os headers direto no vhost deles.
+
+Depois de publicar, vale conferir os headers com
+`curl -sI https://pos.univicosa.edu.br` ou em securityheaders.com.
+
 ## Rastreamento de campanha
 
 A página já captura `utm_source`, `utm_medium`, `utm_campaign` e
