@@ -1,0 +1,61 @@
+# =========================================================
+# Exemplo de VirtualHost Apache para a landing page Univiçosa Pós
+# Copie para /etc/apache2/sites-available/pos-graduacao.conf
+# (ou /etc/httpd/conf.d/ no CentOS/RHEL), ajuste os caminhos e:
+#   a2enmod ssl rewrite headers deflate
+#   a2ensite pos-graduacao
+#   apachectl configtest && systemctl reload apache2
+#
+# Preferível ao .htaccess: evita o overhead de ler .htaccess a
+# cada request e permite AllowOverride None (mais seguro).
+# =========================================================
+
+# Emissão do certificado (uma vez, com o Apache já rodando na porta 80):
+#   sudo certbot --apache -d pos.univicosa.edu.br
+# O certbot cria o bloco :443 abaixo e o redirecionamento 80->443
+# automaticamente. O exemplo a seguir mostra a config final equivalente.
+
+<VirtualHost *:80>
+    ServerName pos.univicosa.edu.br
+    Redirect permanent / https://pos.univicosa.edu.br/
+</VirtualHost>
+
+<VirtualHost *:443>
+    ServerName pos.univicosa.edu.br
+    DocumentRoot /var/www/pos-graduacao
+
+    SSLEngine on
+    SSLCertificateFile /etc/letsencrypt/live/pos.univicosa.edu.br/fullchain.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/pos.univicosa.edu.br/privkey.pem
+    SSLProtocol -all +TLSv1.2 +TLSv1.3
+    SSLCipherSuite HIGH:!aNULL:!MD5:!3DES
+    SSLHonorCipherOrder on
+
+    <Directory /var/www/pos-graduacao>
+        Options -Indexes -FollowSymLinks
+        AllowOverride None
+        Require all granted
+    </Directory>
+
+    # Bloqueia .git e arquivos sensíveis caso o repo seja clonado direto no DocumentRoot
+    <DirectoryMatch "^/var/www/pos-graduacao/\.git">
+        Require all denied
+    </DirectoryMatch>
+    <FilesMatch "(^\.|\.(md|log|env|bak|sql|config)$)">
+        Require all denied
+    </FilesMatch>
+
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.facebook.com; connect-src 'self' https://www.facebook.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://wa.me"
+
+    <IfModule mod_deflate.c>
+        AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript
+    </IfModule>
+
+    ErrorLog ${APACHE_LOG_DIR}/pos-graduacao-error.log
+    CustomLog ${APACHE_LOG_DIR}/pos-graduacao-access.log combined
+</VirtualHost>

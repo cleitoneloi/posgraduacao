@@ -1,0 +1,47 @@
+# =========================================================
+# Univiçosa Pós — hardening para Apache (httpd)
+# Requer os módulos: mod_rewrite, mod_headers
+# Ative com: a2enmod rewrite headers  (Debian/Ubuntu)
+#            ou LoadModule rewrite_module / headers_module no httpd.conf
+# =========================================================
+
+# ---- Força HTTPS ----
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Bloqueia acesso à pasta .git caso o repositório seja clonado
+  # direto no DocumentRoot (nunca publique a pasta .git)
+  RewriteRule ^\.git/ - [F,L,NC]
+</IfModule>
+
+# ---- Headers de segurança ----
+<IfModule mod_headers.c>
+  # Força HTTPS em navegadores por 1 ano (só habilite depois de confirmar
+  # que o certificado está estável — é difícil de reverter)
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+
+  # CSP: libera apenas o necessário (Google Fonts + Meta Pixel + wa.me).
+  # 'unsafe-inline' em script-src é por causa do snippet inline do Meta Pixel
+  # no <head>; se quiser remover, mova o snippet para js/pixel.js externo.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.facebook.com; connect-src 'self' https://www.facebook.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://wa.me"
+</IfModule>
+
+# ---- Desativa listagem de diretórios ----
+Options -Indexes -FollowSymLinks +SymLinksIfOwnerMatch
+
+# ---- Bloqueia arquivos sensíveis ----
+<FilesMatch "(^\.|\.(md|log|env|bak|sql|config)$)">
+  Require all denied
+</FilesMatch>
+
+# ---- Compressão (performance, não é item de segurança) ----
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript
+</IfModule>
