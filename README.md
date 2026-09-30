@@ -125,3 +125,32 @@ cada inscrição.
   cliques.
 - Validar com a secretaria acadêmica se a matrícula será feita
   automaticamente no RM a partir do lead qualificado, ou se segue manual.
+
+## Página de cursos com painel administrativo (`cursos/`)
+
+Versão dinâmica (PHP 8+ com SQLite — `pdo_sqlite` habilitado) onde a
+secretaria/TI controla os cursos sem mexer em código.
+
+- **Site público:** `/cursos/` — lista só os cursos **ativos**, com filtro por área,
+  destaque e botão de inscrição (WhatsApp da secretaria ou link próprio do curso).
+- **Painel:** `/cursos/admin/` — login, cadastro/edição de cursos, **ativar/desativar**
+  (desativar tira do site e mantém os dados), excluir, reordenar, destacar,
+  gestão de administradores, configurações do site (título, WhatsApp, e-mail)
+  e histórico de ações (auditoria).
+
+Primeiro acesso: abra `/cursos/admin/` e crie o primeiro administrador
+(a tela de setup some depois disso — faça logo após publicar). Na 1ª execução o
+banco é criado com cursos de **exemplo**: substitua/desative pelos reais
+(campo "Código RM" para casar com a turma no TOTVS RM).
+
+Segurança embutida: senhas com `password_hash`, bloqueio após 5 tentativas
+erradas (15 min), token CSRF, cookie de sessão HttpOnly/SameSite=Strict,
+escape de saída, consultas preparadas. Em produção:
+
+1. Sirva apenas por HTTPS (o `.htaccess` da raiz já força).
+2. Defina `POS_DB_DIR` para uma pasta **fora** do DocumentRoot
+   (`SetEnv POS_DB_DIR /var/lib/pos-univicosa`, com escrita para o usuário do Apache);
+   `cursos/data/` já vem com `.htaccess` negando acesso, mas fora do webroot é mais seguro.
+3. Faça backup do arquivo `pos.sqlite`.
+
+Teste local: `php -S localhost:8000` na raiz e abra `http://localhost:8000/cursos/`.

@@ -37,7 +37,7 @@
 Options -Indexes -FollowSymLinks +SymLinksIfOwnerMatch
 
 # ---- Bloqueia arquivos sensíveis ----
-<FilesMatch "(^\.|\.(md|log|env|bak|sql|config)$)">
+<FilesMatch "(^\.|\.(md|log|env|bak|sql|config|sqlite|sqlite-wal|sqlite-shm)$)">
   Require all denied
 </FilesMatch>
 
