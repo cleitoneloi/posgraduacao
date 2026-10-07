@@ -71,3 +71,30 @@ cada inscrição.
   cliques.
 - Validar com a secretaria acadêmica se a matrícula será feita
   automaticamente no RM a partir do lead qualificado, ou se segue manual.
+
+## Prótese e Dentística: banner embutido x banner hospedado
+
+| Arquivo | Banner | Tamanho |
+|---|---|---|
+| `protese-dentistica-processo-seletivo.html` | JPEG embutido em base64 | ~100 KB |
+| `protese-dentistica-processo-seletivo-url.html` | `<img>` apontando para `img/protese-dentistica-banner.jpg` hospedado | ~14 KB |
+
+O conteúdo é idêntico (paleta azul claro, coordenação com a Profa. Michelle e a
+Profa. Viviane); só muda a origem da imagem. A renderização das duas é pixel a
+pixel igual.
+
+**Recomendação: usar a versão `-url`.** Mesmo que a coluna do RM seja
+`(N)VARCHAR(MAX)`, 100 KB de base64 pesam no editor de descrição do RM, no
+carregamento da página de inscrição, em qualquer integração que leia esse campo
+(Rubeus, n8n) e somem em e-mails (Gmail e Outlook bloqueiam imagens `data:`).
+A versão `-url` fica no mesmo porte do HTML de Endodontia (~15 KB), que já
+está publicado sem problema.
+
+Para confirmar o limite do campo no banco, rode
+`sql/verificar-campo-descricao-ps.sql` (somente leitura).
+
+**Antes de publicar em produção:** a imagem hoje é servida pelo
+`raw.githubusercontent.com`, fixada no commit (não muda se o arquivo for
+editado). Funciona, mas não é CDN institucional. O ideal é subir
+`img/protese-dentistica-banner.jpg` no servidor da Univiçosa (o mesmo Apache da
+landing page) e trocar só o `src` do `<img>`.
